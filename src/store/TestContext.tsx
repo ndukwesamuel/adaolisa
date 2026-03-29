@@ -1,18 +1,18 @@
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useCallback,
   useRef,
   type ReactNode,
-} from 'react';
+} from "react";
 import type {
   Question,
   AnswerMap,
   TestResultSummary,
   WrongAnswerDetail,
   OptionKey,
-} from '@/types';
+} from "@/types";
 
 interface TestState {
   questions: Question[];
@@ -52,12 +52,15 @@ export function TestProvider({ children }: { children: ReactNode }) {
     startTimeRef.current = Date.now();
   }, []);
 
-  const answerQuestion = useCallback((questionId: string, option: OptionKey) => {
-    setState((prev) => ({
-      ...prev,
-      answers: { ...prev.answers, [questionId]: option },
-    }));
-  }, []);
+  const answerQuestion = useCallback(
+    (questionId: string, option: OptionKey) => {
+      setState((prev) => ({
+        ...prev,
+        answers: { ...prev.answers, [questionId]: option },
+      }));
+    },
+    [],
+  );
 
   const goToQuestion = useCallback((index: number) => {
     setState((prev) => ({
@@ -84,7 +87,7 @@ export function TestProvider({ children }: { children: ReactNode }) {
     (result: TestResultSummary, wrongAnswerDetails: WrongAnswerDetail[]) => {
       setState((prev) => ({ ...prev, result, wrongAnswerDetails }));
     },
-    []
+    [],
   );
 
   const resetTest = useCallback(() => {
@@ -118,6 +121,6 @@ export function TestProvider({ children }: { children: ReactNode }) {
 
 export function useTest(): TestContextValue {
   const ctx = useContext(TestContext);
-  if (!ctx) throw new Error('useTest must be used inside <TestProvider>');
+  if (!ctx) throw new Error("useTest must be used inside <TestProvider>");
   return ctx;
 }

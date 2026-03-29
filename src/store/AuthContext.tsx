@@ -1,11 +1,11 @@
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useCallback,
   type ReactNode,
-} from 'react';
-import type { User } from '@/types';
+} from "react";
+import type { User } from "@/types";
 
 interface AuthContextValue {
   user: User | null;
@@ -15,7 +15,7 @@ interface AuthContextValue {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-const STORAGE_KEY = 'bankready_user';
+const STORAGE_KEY = "bankready_user";
 
 function loadUser(): User | null {
   try {
@@ -48,6 +48,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
 export function useAuth(): AuthContextValue {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error('useAuth must be used inside <AuthProvider>');
+  if (!ctx) throw new Error("useAuth must be used inside <AuthProvider>");
   return ctx;
 }
