@@ -1,14 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from '@/store/AuthContext';
-import { TestProvider } from '@/store/TestContext';
-import ProtectedRoute from '@/components/ProtectedRoute';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "@/store/AuthContext";
+import { TestProvider } from "@/store/TestContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
-import LoginPage   from '@/pages/LoginPage';
-import WelcomePage from '@/pages/WelcomePage';
-import TestPage    from '@/pages/TestPage';
-import ResultsPage from '@/pages/ResultsPage';
-import HistoryPage from '@/pages/HistoryPage';
+import LoginPage from "@/pages/LoginPage";
+import WelcomePage from "@/pages/WelcomePage";
+import TestPage from "@/pages/TestPage";
+import ResultsPage from "@/pages/ResultsPage";
+import HistoryPage from "@/pages/HistoryPage";
 
 export default function App() {
   return (
