@@ -36,12 +36,10 @@
            focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500
            transition-colors duration-150;
   }
-  .tag {
-    @apply text-xs font-semibold px-2.5 py-1 rounded-full;
-  }
-  .tag-green  { @apply tag bg-brand-500/20  text-brand-500; }
-  .tag-yellow { @apply tag bg-yellow-500/20 text-yellow-400; }
-  .tag-blue   { @apply tag bg-blue-500/20   text-blue-400; }
-  .tag-red    { @apply tag bg-red-500/20    text-red-400; }
-  .tag-purple { @apply tag bg-purple-500/20 text-purple-400; }
+  .tag          { @apply text-xs font-semibold px-2.5 py-1 rounded-full; }
+  .tag-green    { @apply tag bg-brand-500/20  text-brand-500; }
+  .tag-yellow   { @apply tag bg-yellow-500/20 text-yellow-400; }
+  .tag-blue     { @apply tag bg-blue-500/20   text-blue-400; }
+  .tag-red      { @apply tag bg-red-500/20    text-red-400; }
+  .tag-purple   { @apply tag bg-purple-500/20 text-purple-400; }
 }
